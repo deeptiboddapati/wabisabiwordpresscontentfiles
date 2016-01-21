@@ -43,8 +43,10 @@
 	// on a single post, it will return [class="single postid-{ID}"]
 	// and the list goes on. Look it up if you want more.
 	?>> 
-  <div class="wrapper row ">
-    <header id="masthead" class= "col-md-3 col-md-offset-2">
+
+
+<div class="wrapper row ">
+    <header class= "col-md-3 col-md-offset-2">
       <div role="navigation" data-nav-status='toggle' class="hidden">
         <ul class="nav nav-pills nav-stacked navbar navbar-default navbar-fixed-top visible-xs ">
           <li> <a class="btn-default" href="#navtop"  type="button" data-toggle="collapse" data-target="#navtop" aria-expanded="false" aria-controls="navtop"> Thoughts about Techsupport</a></li>
@@ -139,4 +141,3 @@
   </div>
 </div>
       </div>
-    </header>
