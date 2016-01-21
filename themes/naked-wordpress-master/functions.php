@@ -21,6 +21,7 @@ add_theme_support( 'automatic-feed-links' );
 /*-----------------------------------------------------------------------------------*/
 /* Register main menu for Wordpress use
 /*-----------------------------------------------------------------------------------*/
+/*
 register_nav_menus( 
 	array(
 		'primary'	=>	__( 'Primary Menu', 'naked' ), // Register the Primary menu
@@ -28,7 +29,7 @@ register_nav_menus(
 		// just change the 'primary' to another name
 	)
 );
-
+*/
 /*-----------------------------------------------------------------------------------*/
 /* Activate sidebar for Wordpress use
 /*-----------------------------------------------------------------------------------*/
