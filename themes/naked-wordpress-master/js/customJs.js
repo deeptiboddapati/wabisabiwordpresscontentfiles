@@ -1,4 +1,4 @@
-
+(function($){
 $(document).ready(function(){
 /** ===========================================
     Hide / show the mobile navigation menu
@@ -52,3 +52,4 @@ $('.readmore').click(function(){
     }
   });
 
+})

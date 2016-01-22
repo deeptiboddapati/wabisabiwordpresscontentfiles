@@ -1,9 +1,14 @@
-<?php get_header(); ?>
-
-	 <section class="col-md-6">
+<?php 
+/**
+ *  Template Name: homeindex
+ *
+ *
+*/
+get_header(); // This fxn gets the header.php file and renders it ?>
+	 
       <div>
-        <h3>Nice to meet you, I'm Deepti.  </h3>
-        <p>I started this blog because <a href="http://www.joelonsoftware.com/articles/CollegeAdvice.html">Joel</a> told me to learn how to write. I stole the name from the <a href="http://c2.com/cgi/wiki/wiki?WabiSabi">c2 Wiki</a>. My personal mission is plugging cognitive leaks so that people can do more awesome. I'll use this chunk of the web to talk about my code, my mission, my favorite tools, and my favorite books.</p>
+        <h3><?php echo get_the_title(); ?></h3>
+        <p> <?php echo get_post_field('post_content') ?> </p>
       </div>
       <div class="firstsec">
         <h2>Projects</h2> </div>
@@ -50,6 +55,6 @@
         </div>
       </div>
       </div>
-    </section>
+    
     
 <?php get_footer(); // This fxn gets the footer.php file and renders it ?>

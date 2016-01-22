@@ -1,0 +1,106 @@
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
+
+/*
+Theme Name: WabiSabi
+Theme URI: deeptiboddapati.github.io
+Author: Deepti Boddapati
+Author URI: deeptiboddapati.github.io
+Description: Theme of deeptiboddapati.github.io
+Version: 1.0
+License: GNU General Public License
+
+-------------------------------------------------------------- */
+/* Reset
+-------------------------------------------------------------- */
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700italic,700);
+
+
+body .wrapper{
+font:16px/1 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+padding-top:5%;
+color:#727272; 
+background-color: #FFFDF5;
+}
+
+.output {
+  color: blue;
+}
+
+img{
+  max-width: 100%;
+  margin:2% 0 4% 0;
+}
+
+header .sidebar{
+  float: left;
+  position:fixed;
+}
+
+.panel-group .panel{
+ background-color: #FFFDF5!important;
+ box-shadow: none!important;
+}
+
+  .wrapper h1{
+  font-size:1.5em;
+  color:#222;
+  font-weight: 700;
+  font-style: normal;
+  }
+  .wrapper h3, .wrapper h2{
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.1em;
+  color:#222;
+  } 
+  .wrapper p, a{
+    font-size: .9em;
+  }    
+ .firstsec h2 {
+  border-color: #3498db;
+  border-style: none none solid none;
+  border-width: 1%;
+}
+
+#catchphrase code{
+ color:#000;
+ background-color:#fff;
+ padding:0;
+}
+@media print, screen and (max-width: 1200px){
+ header .sidebar, section, footer{
+  float: none;
+  position: static;
+}
+  }
+
+@media print, screen and (max-width: 960px){
+  .nomobile{
+    display:none;
+  }
+  body .wrapper{
+    text-align:center;
+    padding:0;
+    margin:auto;
+  }
+  header .sidebar, section, footer{
+ 
+  width: 80%;
+  margin: auto;
+  border-color: #3498db;
+  border-style: none none solid none;
+  border-width: 1%;
+}
+}
+
+@media print, screen and (max-width: 720px){
+}
+
+@media print, screen and (max-width: 480px){
+  p,table,pre,dl {
+  text-align: justify;
+}
+  body .wrapper{
+    font-size: 14px; 
+  }
+}  
