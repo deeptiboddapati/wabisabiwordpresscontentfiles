@@ -1,3 +1,4 @@
+
 <?php
 	/*-----------------------------------------------------------------------------------*/
 	/* This template will be called by all other template files to finish 
@@ -5,6 +6,7 @@
 	/*-----------------------------------------------------------------------------------*/
 ?>
 
+</section>
     <footer class="col-md-4"> 
       <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
     </footer>

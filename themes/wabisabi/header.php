@@ -46,6 +46,7 @@
 
 	<div class="panel-group visible-xs " id="topaccordion" role="tablist" aria-multiselectable="true">
 	<!--- Mobileonly menu -->
+	<div class="hidden"  data-nav-status='toggle'>
 	<?php 
 				wp_nav_menu(array(
 					'theme_location' => 'mobiletop',
@@ -55,6 +56,8 @@
 					));
 	?>
 </div>	
+</div>	
+
 <div class="wrapper row ">
 
 
@@ -63,16 +66,17 @@
 	<header class= "col-md-3 col-md-offset-2">
 
 		<div class="sidebar">
-			<h1>Wabi Sabi Programming</h1>
+			<h1><?php bloginfo('name')?></h1>
+			<?php bloginfo("description") ?>
 			<div>
 				<div id="sociallinks"><span class="glyphicon icon-g-github"></span><span class="glyphicon icon-g-github"></span></div>
 			</div>
 			<div id="catchphrase" class="nomobile">
-				<code>>Dee.cool()<br />
-					<span class="output">False</span><br />
-					>Dee.passion()<br />
-					<span class="output">True</span></code>
-					<p></p>
+				 <code>>Dee.cool()<br />
+        <span class="output">False</span><br />
+        >Dee.passion()<br />
+        <span class="output">True</span></code>
+        <p></p>
 				</div>
 <div class="panel-group" id="sideaccordion" role="tablist" aria-multiselectable="true">
 
@@ -87,3 +91,5 @@
 		</div>
 			</div>
 		</header>
+
+<section class="col-md-6">
