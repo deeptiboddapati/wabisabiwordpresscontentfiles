@@ -38,6 +38,7 @@ do_action('wp_head');
 	// i.e. on a home page, it will return [class="home"]
 	// on a single post, it will return [class="single postid-{ID}"]
 	// and the list goes on. Look it up if you want more.
+
 ?>> 
 
 	<div class="panel-group visible-xs " id="topaccordion" role="tablist" aria-multiselectable="true">
@@ -84,3 +85,103 @@ do_action('wp_head');
 			</div>
 		</header>
 
+
+	?>> 
+
+
+<div class="wrapper row ">
+    <header class= "col-md-3 col-md-offset-2">
+      <div role="navigation" data-nav-status='toggle' class="hidden">
+        <ul class="nav nav-pills nav-stacked navbar navbar-default navbar-fixed-top visible-xs ">
+          <li> <a class="btn-default" href="#navtop"  type="button" data-toggle="collapse" data-target="#navtop" aria-expanded="false" aria-controls="navtop"> Thoughts about Techsupport</a></li>
+          <div class="collapse" id="navtop">
+
+            <ul class=" nav nav-pills nav-stacked">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </div>
+          
+        </ul>
+      </div>
+      <div class="sidebar">
+      <h1>Wabi Sabi Programming</h1>
+      <div>
+        <div id="sociallinks"><span class="glyphicon icon-g-github"></span><span class="glyphicon icon-g-github"></span></div>
+      </div>
+      <div id="catchphrase" class="nomobile">
+        <code>>Dee.cool()<br />
+        <span class="output">False</span><br />
+        >Dee.passion()<br />
+        <span class="output">True</span></code>
+        <p></p>
+      </div>
+   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    
+  <div class="panel">
+      <a role="button" class="btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+    <div  id="headingOne">
+    
+       
+          Menuitem1
+        
+     
+    </div>
+    </a>
+    <div id="collapseOne" class="panel-collapse collapse " role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        <ul class=" nav nav-pills nav-stacked">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+    </div>
+      </div>
+  </div>
+  <div class="panel ">
+    <a class="collapsed btn-default" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+    <div id="headingTwo">
+      
+        
+          Menuitem2
+       
+     
+    </div>
+     </a>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <ul class=" nav nav-pills nav-stacked">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+     </div>
+    </div>
+  </div>
+  <div class="panel ">
+    <a class="collapsed btn-default " role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+    <div  id="headingThree">     
+          Menuitem3
+    </div>
+    </a>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+           <ul class=" nav nav-pills nav-stacked">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
