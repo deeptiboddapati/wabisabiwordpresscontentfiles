@@ -5,56 +5,92 @@
  *
 */
 get_header(); // This fxn gets the header.php file and renders it ?>
-	 
-      <div>
+<?php
+$sectiononelabel = get_field('section_one_label');
+$sectiontwolabel = get_field('section_two_label');
+?>
+
+<div>
         <h3><?php echo get_the_title(); ?></h3>
         <p> <?php echo get_post_field('post_content') ?> </p>
-      </div>
-      <div class="firstsec">
-        <h2>Projects</h2> </div>
-      <div class="projects">
-        <div class="row">
-          <div  class="col-md-4">
-           <a href="http://www.billtracker.org"> 
-          <image src='logo-balloon copy.png'/>
-        </a>
-        </div>
-          <div class="col-md-8">
-          <p>
-            I got the idea for BillTracker.org at an ATX OpenHack panel about how to bring tech into government. One of the panelists talked about how difficult following a bill through congress was. She likened it to watching a ping pong match. When ATX Hack For Change came around I recurited a team, wrote a pitch and planned out sprints with Trello. Having such a passionate team was a humbling and amazing experience. <ul class="collapse" id="readmore1"> Built with: <li> Django </li> <li> Annotator.js </li> </ul><a type="button" class="readmore" data-toggle="collapse" href="#readmore1" data-target="" aria-expanded="true" aria-controls="readmore1">See More</a></p>
-        </div>
-      </div>
+</div>
 
-     <div class="row">
-          <image src='http://placehold.it/230x200' class="col-md-6"/>
-          <div class="col-md-6">
-          <p>
-            Lorem ipsum dolor sit amet, te fuisset commune cum. Ut mea salutatus scriptorem, no dolores abhorreant eos, sumo graecis ancillae mei ei. Mei ad dicit impetus periculis. Justo suavitate his ne, vis et brute singulis rationibus. Ei stet aliquip nec, annec quem percipit, cu mel lorem civibus offendit. Per nisl quaeque in, qui sumo quando urbanitas ne. <p class="collapse" id="readmore1">Et tation tamquam voluptatibus usu, admodum inciderint vis ad. Id quis magna mandamus qui, cu vel iudico ridens. Mundi malorum torquatos duo
-            et, mea an inani partem cotidieque. Vis nominavi detraxit no, et vix tale labore. Posse vivendum deserunt has in, quot.</p><a type="button" class="readmore" data-toggle="collapse" href="#readmore1" data-target="" aria-expanded="true" aria-controls="readmore1">See More</a></p>
-        </div>
-      </div>
+<div class="firstsec"><h2><?php echo $sectiononelabel ?></h2> </div>
 
-   <div class="firstsec">
-        <h2>Projects</h2> </div>
-      <div class="projects">
-        <div class="row">
-          <image src='http://placehold.it/230x200' class="col-md-6"/>
-          <div class="col-md-6">
-          <p>
-            Lorem ipsum dolor sit amet, te fuisset commune cum. Ut mea salutatus scriptorem, no dolores abhorreant eos, sumo graecis ancillae mei ei. Mei ad dicit impetus periculis. Justo suavitate his ne, vis et brute singulis rationibus. Ei stet aliquip nec, annec quem percipit, cu mel lorem civibus offendit. Per nisl quaeque in, qui sumo quando urbanitas ne. <p class="collapse" id="readmore1">Et tation tamquam voluptatibus usu, admodum inciderint vis ad. Id quis magna mandamus qui, cu vel iudico ridens. Mundi malorum torquatos duo
-            et, mea an inani partem cotidieque. Vis nominavi detraxit no, et vix tale labore. Posse vivendum deserunt has in, quot.</p><a type="button" class="readmore" data-toggle="collapse" href="#readmore1" data-target="#readmore1" aria-expanded="true" aria-controls="readmore1">See More</a></p>
-        </div>
-      </div>
 
-       <div class="row">
-          <image src='http://placehold.it/230x200' class="col-md-6"/>
-          <div class="col-md-6">
-          <p>
-            Lorem ipsum dolor sit amet, te fuisset commune cum. Ut mea salutatus scriptorem, no dolores abhorreant eos, sumo graecis ancillae mei ei. Mei ad dicit impetus periculis. Justo suavitate his ne, vis et brute singulis rationibus. Ei stet aliquip nec, annec quem percipit, cu mel lorem civibus offendit. Per nisl quaeque in, qui sumo quando urbanitas ne. <p class="collapse" id="readmore1">Et tation tamquam voluptatibus usu, admodum inciderint vis ad. Id quis magna mandamus qui, cu vel iudico ridens. Mundi malorum torquatos duo
-            et, mea an inani partem cotidieque. Vis nominavi detraxit no, et vix tale labore. Posse vivendum deserunt has in, quot.</p><a type="button" class="readmore" data-toggle="collapse" href="#readmore1" data-target="#readmore1" aria-expanded="true" aria-controls="readmore1">See More</a></p>
-        </div>
-      </div>
-      </div>
+<?php $query = new WP_Query( array( 'post_type' => 'project', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+
+<?php while($query->have_posts()): $query->the_post();?>
+  <div>
+    <h3> <?php the_title(); ?> </h3>
+    <?php 
+    $frameworks_technology = get_field('frameworks_technology');
+    $project_image = get_field('project_image');
+    $project_short_description = get_field('project_short_description');
+    $project_full_description = get_field('project_full_description');
+
+    ?>
+    <p><?php echo $frameworks_technology ?></p>
+  </div>
+
+
+
+  <div class="projects">
+    <div class="row">
+      <div  class="col-md-4">
+        <!-- if image exists -->
+        <?php if(!empty($project_image)) : ?>
+        <a href="http://www.billtracker.org"> 
+         <image src=' <?php echo $project_image['url'] ?>' />
+         </a>
+       <?php endif; ?>
+     </div>
+     <div class="col-md-8">
+      <p>
+        <?php echo $project_short_description ?>
+      </p>
+      <p>
+        <?php echo $project_full_description ?> 
+      </p>
+    </div>
+  </div>
+
+<?php endwhile; ?>
+
+
+
+<div class="firstsec">
+  <h2><?php echo $sectiontwolabel ?></h2> </div>
+  <?php $query = new WP_Query( array( 'post_type' => 'award', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+
+  <?php while($query->have_posts()): $query->the_post();?>
+  <div>
+    <h3> <?php the_title(); ?> </h3>
+    <?php 
+    $award_name = get_field('award_name');
+    $award_picture = get_field('award_picture');
+    $award_description = get_field('award_description');
+    ?>
     
-    
+  </div>
+  <div class="projects">
+    <div class="row">
+      <div  class="col-md-4">
+        <!-- if image exists -->
+        <?php if(!empty($award_picture)) : ?>
+        <a href="http://www.billtracker.org"> 
+         <image src=' <?php echo $award_picture['url'] ?>' />
+         </a>
+       <?php endif; ?>
+     </div>
+     <div class="col-md-8">
+      <p>
+        <?php echo $award_description ?>
+      </p>
+    </div>
+  </div>
+</div>
+<?php endwhile; ?>
+
+
 <?php get_footer(); // This fxn gets the footer.php file and renders it ?>

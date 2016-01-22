@@ -1,2 +1,2 @@
-naked-wordpress
+wabisabi
 ===============
