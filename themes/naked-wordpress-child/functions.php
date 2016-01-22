@@ -6,13 +6,18 @@ class Walker_Panels_Menu extends Walker {
         'parent' => 'menu_item_parent', 
         'id'     => 'db_id' 
     );
+     var $accordionid;
+    function __construct($accordionid){
+    $this->accordionid =$accordionid;
+    }
+
 
     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-        $setid = preg_replace('/\s+/', '', $item->title);
+        $setid = preg_replace('/\s+/', '', $item->title) . $this->accordionid;
         if( $item->object =='category')
         $output .= sprintf( '
                 <div class="panel">
-    <a role="button" class="btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapse%s" aria-expanded="true" aria-controls="collapse%s">
+    <a role="button" class="btn-default" data-toggle="collapse" data-parent="#%s" href="#collapse%s" aria-expanded="true" aria-controls="collapse%s">
         <div  id="Heading%s">
             %s
         </div>
@@ -20,6 +25,7 @@ class Walker_Panels_Menu extends Walker {
     <div id="collapse%s" class="panel-collapse collapse " role="tabpanel" aria-labelledby="Heading%s">
         <div class="panel-body">
         <ul class=" nav nav-pills nav-stacked">',
+            $this->accordionid,
             $setid,
             $setid,
             $setid,
@@ -45,6 +51,7 @@ class Walker_Panels_Menu extends Walker {
 }
 
 
+
 register_nav_menus( 
     array(
         'primary'   =>  __( 'Primary Menu', 'wabisabi' ), // Register the Primary menu
@@ -53,5 +60,27 @@ register_nav_menus(
     )
 );
 
+register_nav_menus( 
+    array(
+        'mobiletop'   =>  __( 'Mobile Top', 'wabisabi' ), // Register the Primary menu
+        // Copy and paste the line above right here if you want to make another menu, 
+        // just change the 'primary' to another name
+    )
+);
 
-?>
+
+
+function wabisabi()  { 
+
+    // get the theme directory style.css and link to it in the header
+    wp_enqueue_style('style.css', get_stylesheet_directory_uri() . '/style.css');
+    
+    // add fitvid
+   
+    wp_enqueue_script( 'customjs', get_template_directory_uri() . '/js/customJs.js', array( 'jquery' ), 1.0, true );
+    
+
+  
+}
+add_action( 'wp_enqueue_scripts', 'wabisabi' ); // Register this fxn and allow Wordpress to call it automatcally in the header
+//echo(get_stylesheet_directory_uri() . '/js/customJs.js');

@@ -26,19 +26,23 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 
-<?php
-do_action('wp_head');
+<?php wp_head(); 
+// This fxn allows plugins, and Wordpress itself, to insert themselves/scripts/css/files
+// (right here) into the head of your website. 
+// Removing this fxn call will disable all kinds of plugins and Wordpress default insertions. 
+// Move it if you like, but I would keep it around.
 ?>
+
 </head>
 
-
-
-<body <?php body_class(); 
+<body 
+	<?php body_class(); 
 	// This will display a class specific to whatever is being loaded by Wordpress
 	// i.e. on a home page, it will return [class="home"]
 	// on a single post, it will return [class="single postid-{ID}"]
 	// and the list goes on. Look it up if you want more.
-?>> 
+	?>
+>
 
 	<div class="panel-group visible-xs " id="topaccordion" role="tablist" aria-multiselectable="true">
 	<!--- Mobileonly menu -->
@@ -83,4 +87,3 @@ do_action('wp_head');
 		</div>
 			</div>
 		</header>
-
