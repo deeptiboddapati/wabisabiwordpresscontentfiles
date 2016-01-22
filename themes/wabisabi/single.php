@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying any single post.
+ * Template Name: Post Page
  *
  */
 
