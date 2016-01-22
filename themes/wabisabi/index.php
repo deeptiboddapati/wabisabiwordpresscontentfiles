@@ -5,13 +5,16 @@
  *
 */
 get_header(); // This fxn gets the header.php file and renders it ?>
-	 
+<?php
+ $sectiononelabel = get_field('section_one_label');
+ $sectiontwolabel = get_field('section_two_label');
+?>
       <div>
         <h3><?php echo get_the_title(); ?></h3>
         <p> <?php echo get_post_field('post_content') ?> </p>
       </div>
       <div class="firstsec">
-        <h2>Projects</h2> </div>
+        <h2><?php echo $sectiononelabel ?></h2> </div>
       <div class="projects">
         <div class="row">
           <div  class="col-md-4">
@@ -35,7 +38,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
       </div>
 
    <div class="firstsec">
-        <h2>Projects</h2> </div>
+        <h2><?php echo $sectiontwolabel ?></h2> </div>
       <div class="projects">
         <div class="row">
           <image src='http://placehold.it/230x200' class="col-md-6"/>
