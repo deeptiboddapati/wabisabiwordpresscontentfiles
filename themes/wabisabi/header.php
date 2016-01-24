@@ -63,7 +63,7 @@
 
 
 	
-	<header class= "col-md-3 col-md-offset-2">
+	<header class= "col-md-3 ">
 
 		<div class="sidebar">
 			<h1><?php bloginfo('name')?></h1>
@@ -92,4 +92,4 @@
 			</div>
 		</header>
 
-<section class="col-md-6 col-md-offset-1">
+<section class="col-md-8 col-md-offset-1">

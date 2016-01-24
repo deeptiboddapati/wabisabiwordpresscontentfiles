@@ -15,7 +15,7 @@ $sectiontwolabel = get_field('section_two_label');
         <p> <?php echo get_post_field('post_content') ?> </p>
       </div>
 
-<div class="firstsec"><h2><?php echo $sectiononelabel ?></h2> </div>
+<div class="firstsec"><h3><?php echo $sectiononelabel ?></h3> </div>
 
 
 <?php $query = new WP_Query( array( 'post_type' => 'project', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
@@ -60,7 +60,7 @@ $sectiontwolabel = get_field('section_two_label');
 
 
 <div class="firstsec">
-  <h2><?php echo $sectiontwolabel ?></h2> </div>
+  <h3><?php echo $sectiontwolabel ?></h3> </div>
   <?php $query = new WP_Query( array( 'post_type' => 'award', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
 
   <?php while($query->have_posts()): $query->the_post();?>

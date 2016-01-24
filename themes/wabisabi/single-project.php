@@ -14,31 +14,40 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 				// If we have a post to show, start a loop that will display it
 ?>
 
-<div class="row">
+ <div>
+    <h3> <?php the_title(); ?> </h3>
+    <?php 
+    $frameworks_technology = get_field('frameworks_technology');
+    $project_image = get_field('project_image');
+    $project_short_description = get_field('project_short_description');
+    $project_full_description = get_field('project_full_description');
 
-	<?php 
-	$question = get_field('question');
-	$answer = get_field('answer');
+    ?>
+    <p><?php echo $frameworks_technology ?></p>
+  </div>
 
-	?>
 
-</div>
-<div class="projects">
-	<div class="row">
-		
-			<h2 class=""><fancy class="qanda"> Q. </fancy> <?php echo $question?></h2>
-	</div>	
-	<div class="row">	
-			<p>
-				<fancy class="qanda"> A. </fancy> <?php echo $answer ?>
-			</p>
-		
-	</div>
-	<div class="meta clearfix">
-	<div class="category"><?php echo get_the_category_list(); // Display the categories this post belongs to, as links ?></div>
-	<div class="tags"><?php echo get_the_tag_list( '| &nbsp;', '&nbsp;' ); // Display the tags this post has, as links separated by spaces and pipes ?></div>
-</div><!-- Meta -->
-</div>		
+
+  <div class="projects">
+    <div class="row">
+      <div  class="col-md-4">
+        <!-- if image exists -->
+        <?php if(!empty($project_image)) : ?>
+        <a href="http://www.billtracker.org"> 
+         <image src=' <?php echo $project_image['url'] ?>' />
+         </a>
+       <?php endif; ?>
+     </div>
+     <div class="col-md-8">
+      <p>
+        <?php echo $project_short_description ?>
+      </p>
+      <p>
+        <?php echo $project_full_description ?> 
+      </p>
+    </div>
+  </div>
+	
 
 
 </article>
