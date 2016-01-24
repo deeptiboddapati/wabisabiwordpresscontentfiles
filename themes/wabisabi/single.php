@@ -1,8 +1,5 @@
 <?php
-/**
- * Template Name: Post Page
- *
- */
+
 
 get_header(); // This fxn gets the header.php file and renders it ?>
 	<div id="primary" class="row-fluid">
@@ -17,7 +14,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 				?>
 
 					<article class="post">
-					
+					<?php echo "were in the single.php template" ?>
 						<h1 class="title"><?php the_title(); // Display the title of the post ?></h1>
 						<div class="post-meta">
 							<?php the_time('m.d.Y'); // Display the time it was published ?>

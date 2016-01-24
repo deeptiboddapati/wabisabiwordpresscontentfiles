@@ -29,7 +29,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
       <div  class="col-md-4">
         <!-- if image exists -->
         <?php if(!empty($award_picture)) : ?>
-        <a href="http://www.billtracker.org"> 
+        <a href="#"> 
          <image src=' <?php echo $award_picture['url'] ?>' />
          </a>
        <?php endif; ?>

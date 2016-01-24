@@ -13,7 +13,7 @@ $sectiontwolabel = get_field('section_two_label');
 <div>
         <h3><?php echo get_the_title(); ?></h3>
         <p> <?php echo get_post_field('post_content') ?> </p>
-</div>
+      </div>
 
 <div class="firstsec"><h2><?php echo $sectiononelabel ?></h2> </div>
 
@@ -54,7 +54,7 @@ $sectiontwolabel = get_field('section_two_label');
       </p>
     </div>
   </div>
-
+</div>
 <?php endwhile; ?>
 
 
@@ -78,7 +78,7 @@ $sectiontwolabel = get_field('section_two_label');
       <div  class="col-md-4">
         <!-- if image exists -->
         <?php if(!empty($award_picture)) : ?>
-        <a href="http://www.billtracker.org"> 
+        <a href="#"> 
          <image src=' <?php echo $award_picture['url'] ?>' />
          </a>
        <?php endif; ?>

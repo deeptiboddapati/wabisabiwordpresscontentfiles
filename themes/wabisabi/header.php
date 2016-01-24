@@ -57,7 +57,7 @@
 	?>
 </div>	
 </div>	
-
+<div class="container">
 <div class="wrapper row ">
 
 
@@ -92,4 +92,4 @@
 			</div>
 		</header>
 
-<section class="col-md-6">
+<section class="col-md-6 col-md-offset-1">
