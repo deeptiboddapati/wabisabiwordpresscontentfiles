@@ -21,7 +21,9 @@ get_header(); // This fxn gets the header.php file and renders it ?>
     $project_image = get_field('project_image');
     $project_short_description = get_field('project_short_description');
     $project_full_description = get_field('project_full_description');
-
+    $github_commitgraph = get_field('github_commitgraph');
+    $github_link = get_field('github_link');
+    $github_individual_commits = get_field('github_individual_commits');
     ?>
     <p><?php echo $frameworks_technology ?></p>
   </div>
@@ -47,18 +49,42 @@ get_header(); // This fxn gets the header.php file and renders it ?>
       </p>
     </div>
   </div>
-	
-
-
+<?php if(!empty($github_commitgraph)) : ?>
+ <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<h3 class="text-center">
+				Github Commits
+			</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+		
+        <a href='<?php echo $github_link ?>' > 
+         <image src=' <?php echo $github_commitgraph['url'] ?>' />
+         </a>
+       
+		</div>
+	</div>
+</div>
+<?php endif; ?>
+<?php if(!empty($github_individual_commits)) : ?>
+ <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+		
+        <a href='<?php echo $github_link ?>' > 
+         <image src=' <?php echo $github_individual_commits['url'] ?>' />
+         </a>
+       
+		</div>
+	</div>
+</div>
+<?php endif; ?>
 </article>
 
 <?php endwhile; // OK, let's stop the post loop once we've displayed it ?>
-
-<?php
-					// If comments are open or we have at least one comment, load up the default comment template provided by Wordpress
-if ( comments_open() || '0' != get_comments_number() )
-	comments_template( '', true );
-?>
 
 
 <?php else : // Well, if there are no posts to display and loop through, let's apologize to the reader (also your 404 error) ?>

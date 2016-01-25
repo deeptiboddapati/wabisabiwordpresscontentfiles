@@ -46,6 +46,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
       </p>
     </div>
   </div>
+  
 
 <?php endwhile; ?>
 
