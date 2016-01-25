@@ -57,13 +57,13 @@
 	?>
 </div>	
 </div>	
-
+<div class="container">
 <div class="wrapper row ">
 
 
 
 	
-	<header class= "col-md-3 col-md-offset-2">
+	<header class= "col-md-3 ">
 
 		<div class="sidebar">
 			<h1><?php bloginfo('name')?></h1>
@@ -92,4 +92,4 @@
 			</div>
 		</header>
 
-<section class="col-md-6">
+<section class="col-md-8 col-md-offset-1">

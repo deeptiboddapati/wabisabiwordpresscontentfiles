@@ -13,9 +13,9 @@ $sectiontwolabel = get_field('section_two_label');
 <div>
         <h3><?php echo get_the_title(); ?></h3>
         <p> <?php echo get_post_field('post_content') ?> </p>
-</div>
+      </div>
 
-<div class="firstsec"><h2><?php echo $sectiononelabel ?></h2> </div>
+<div class="firstsec"><h3><?php echo $sectiononelabel ?></h3> </div>
 
 
 <?php $query = new WP_Query( array( 'post_type' => 'project', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
@@ -54,13 +54,13 @@ $sectiontwolabel = get_field('section_two_label');
       </p>
     </div>
   </div>
-
+</div>
 <?php endwhile; ?>
 
 
 
 <div class="firstsec">
-  <h2><?php echo $sectiontwolabel ?></h2> </div>
+  <h3><?php echo $sectiontwolabel ?></h3> </div>
   <?php $query = new WP_Query( array( 'post_type' => 'award', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
 
   <?php while($query->have_posts()): $query->the_post();?>
@@ -78,7 +78,7 @@ $sectiontwolabel = get_field('section_two_label');
       <div  class="col-md-4">
         <!-- if image exists -->
         <?php if(!empty($award_picture)) : ?>
-        <a href="http://www.billtracker.org"> 
+        <a href="#"> 
          <image src=' <?php echo $award_picture['url'] ?>' />
          </a>
        <?php endif; ?>
