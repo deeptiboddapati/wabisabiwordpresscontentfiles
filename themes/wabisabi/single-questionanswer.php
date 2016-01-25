@@ -28,7 +28,7 @@ get_header(); // This fxn gets the header.php file and renders it ?>
 		
 			<h2 class=""><fancy class="qanda"> Q. </fancy> <?php echo $question?></h2>
 	</div>	
-	<div class="row">	
+	<div class="row" id="answer">	
 			<p>
 				<fancy class="qanda"> A. </fancy> <?php echo $answer ?>
 			</p>
