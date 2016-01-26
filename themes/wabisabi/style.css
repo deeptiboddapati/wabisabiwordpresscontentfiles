@@ -72,6 +72,7 @@ footer {
 
   .wrapper p, a{
     font-size: .9em;
+    line-height: 2.2em;
   }    
  .firstsec h3 {
   border-color: #3498db;
